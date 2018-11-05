@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import { CardElement, injectStripe } from "react-stripie-elements";
-import LoaderButton fromo "./LoaderButton";
+import { CardElement, injectStripe } from "react-stripe-elements";
+import LoaderButton from "./LoaderButton";
 import "./BillingForm.css";
 
 class BillingForm extends Component {
@@ -41,7 +41,7 @@ class BillingForm extends Component {
 
 		const { name } = this.state;
 
-		this.setStage({ isProcessing: true });
+		this.setState({ isProcessing: true });
 
 		const { token, error } = await this.props.stripe.createToken({ name });
 
